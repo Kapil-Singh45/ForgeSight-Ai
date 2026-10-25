@@ -1,0 +1,40 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+build/
+dist/
+*.egg-info/
+
+# Raw Multi-Gigabyte Datasets and Archives
+data/mvtec/
+*.tar.xz
+*.tar.gz
+
+# Environment Variables & Secrets
+.env
+*.pem
+*.key
+
+# IDE & Operating System Files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+
+# Generated model files and outputs
+outputs/checkpoints/
+outputs/heatmaps/
+

@@ -1,0 +1,31 @@
+dataset:
+  name: "mvtec_ad"
+  category: "bottle" # e.g. bottle, cable, capsule, carpet, grid, hazelnut, leather, metal_nut, pill, screw, tile, toothbrush, transistor, wood, zipper
+  data_dir: "./data/mvtec"
+  image_size: [256, 256]
+  normalize:
+    mean: [0.485, 0.456, 0.406]
+    std: [0.229, 0.224, 0.225]
+
+model:
+  backbone: "resnet18" # options: resnet18, resnet34, resnet50, wide_resnet50_2
+  layers:
+    - "layer2"
+    - "layer3"
+  pretrained: true
+
+detector:
+  method: "patchcore"
+  coreset_sampling_ratio: 0.1 # Fraction of patch features to retain (e.g. 0.1 = 10%)
+  n_neighbors: 9              # Number of nearest neighbors for patch distance aggregation
+  gaussian_blur_sigma: 4.0    # Smoothing kernel sigma for spatial anomaly heatmaps
+
+evaluation:
+  pro_max_fpr: 0.3            # Standard MVTec AD max false positive rate for AU-PRO
+  num_vis_samples: 10         # Number of test images to generate visual 4-panel overlays for
+
+system:
+  seed: 42
+  batch_size: 16
+  num_workers: null           # null = auto-detect (0 on Windows, 2 on Linux/Colab)
+  output_dir: "./outputs"
