@@ -1,0 +1,14 @@
+{
+    "category": "bottle",
+    "dataset": "mvtec_ad",
+    "num_test_samples": 83,
+    "num_defective_samples": 63,
+    "num_normal_samples": 20,
+    "image_auroc": 1.0,
+    "image_f1_score": 1.0,
+    "pixel_auroc": 0.9828193928162006,
+    "au_pro": 0.9118933841985633,
+    "optimal_threshold": 1.948495864868164,
+    "pro_max_fpr": 0.3,
+    "fps": 1.965525738022588
+}
